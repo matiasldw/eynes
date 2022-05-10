@@ -23,6 +23,7 @@ class Circulo:
 if __name__ == '__main__':
 
     while True:
+        # Valida el radio hasta que  el usuario ingrese uno valido
         try:
             r = int(input('Ingrese el radio: '))
             if r <= 0:
@@ -31,12 +32,14 @@ if __name__ == '__main__':
             break
         except ValueError as MensajeDeError:
             print(f'{MensajeDeError} Reintente: ', end='')
-
+    
+    # Imprime los metodos
     print(f'Area:\t\t{c1.area()}')
     print(f'Perimetro:\t{c1.perimetro()}')
     print(c1, end='\n\n')
 
     try:
+        # Pide un nuevo radio valido (>=0) de no hacerlo no permite un reintento
         r = int(input('Ingrese el nuevo radio: '))
         if r <= 0:
             raise ValueError ('El valor no podia ser 0 (cero) o menor.')
@@ -48,6 +51,7 @@ if __name__ == '__main__':
         print(MensajeDeError)
 
     try:
+        # Pide un radio valido (>=0) para devolver otro objeto 'Circulo' con radio = al radio del circulo1 * el radio ingresado. De no hacerlo no permite un reintento
         r = int(input('Valor al cual de le multiplicara el radio: '))
         if r <= 0:
             raise ValueError ('El valor no podia ser 0 (cero) o menor.')
